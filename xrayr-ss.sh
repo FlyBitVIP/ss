@@ -20,9 +20,9 @@ fi
 read -p "请输入节点IP: " USER_INPUT_NODEID
 
 # 将占位符替换为用户输入的数值
-final_string=${long_string//"{NODEID}"/$USER_INPUT_NODEID}
-final_string=${long_string//"{HOST}"/$MY_HOST}
-final_string=${long_string//"{KEY}"/$MY_KEY}
+final_string=${long_string//"{NODEID}"/"$USER_INPUT_NODEID"}
+final_string=${long_string//"{HOST}"/"$MY_HOST"}
+final_string=${long_string//"{KEY}"/"$MY_KEY"}
 
 # 将最终字符串写入到文件
 echo "$final_string" > "$CONFIG_PATH"
