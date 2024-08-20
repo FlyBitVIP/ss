@@ -52,3 +52,5 @@ echo "文件已生成: $OUTPUT_FILE"
 
 # 删除临时文件
 rm -rf /home/tempdns.txt
+
+xrayr restart
