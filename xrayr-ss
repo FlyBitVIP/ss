@@ -1,5 +1,6 @@
 Log:
   Level: warning # Log level: none, error, warning, info, debug
+DnsConfigPath: /etc/XrayR/dns.json
 ConnectionConfig:
   Handshake: 4 # Handshake time limit, Second
   ConnIdle: 30 # Connection idle time limit, Second
