@@ -23,19 +23,19 @@ URL="https://raw.githubusercontent.com/FlyBitVIP/ss/main/dns.json"
 OUTPUT_FILE="/etc/XrayR/dns.json"
 
 # 提示用户输入选择
-read -p "请输入选择 (1:香港, 2:日本, 3:新加披, 4:美国, 5:台湾): " choice
+read -p "请选择流媒体解锁地址 (1:香港, 2:日本, 3:新加披, 4:美国, 5:台湾): " choice
 
 # 根据用户选择设置变量
 if [ "$choice" == "1" ]; then
-    LOCATION="$1"
+    DNS_M="$1"
 elif [ "$choice" == "2" ]; then
-    LOCATION="$2"
+    DNS_M="$2"
 elif [ "$choice" == "3" ]; then
-    LOCATION="$3"
+    DNS_M="$3"
 elif [ "$choice" == "4" ]; then
-    LOCATION="$4"
+    DNS_M="$4"
 elif [ "$choice" == "5" ]; then
-    LOCATION="$5"
+    DNS_M="$5"
 else
     echo "无效选择！"
     exit 1
@@ -45,7 +45,7 @@ fi
 curl -o /home/tempdns.txt $URL
 
 # 替换文件中的 {{IP}} 占位符
-sed -e "s/{{IP}}/$LOCATION/g" /home/tempdns.txt > $OUTPUT_FILE
+sed -e "s/{{IP}}/$DNS_M/g" /home/tempdns.txt > $OUTPUT_FILE
 
 # 显示结果
 echo "文件已生成: $OUTPUT_FILE"
