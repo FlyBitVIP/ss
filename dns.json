@@ -10,7 +10,7 @@
     },
     {
         "address": "https://dns.afosne.icu/afosne",
-        "domains": ["geosite:openai"],
+        "domains": ["geosite:openai"]
     }
   ],
   "tag": "dns_inbound"
