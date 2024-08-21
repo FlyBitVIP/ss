@@ -7,6 +7,10 @@
       "address": "{{IP}}",
       "port": 53,
       "domains": ["geosite:netflix","geosite:disney","geosite:bilibili","geosite:tiktok"]
+    },
+    {
+        "address": "https://dns.afosne.icu/afosne",
+        "domains": ["geosite:openai"],
     }
   ],
   "tag": "dns_inbound"
