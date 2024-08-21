@@ -1,5 +1,11 @@
 {
   "servers": [
+    {
+        "address": "https://dns.afosne.icu/afosne",
+        "domains": ["geosite:openai"],
+        "skipFallback": true,
+        "queryStrategy": "UseIPv4"
+    },
     "1.1.1.1",
     "8.8.8.8",
     "localhost",
@@ -7,10 +13,6 @@
       "address": "{{IP}}",
       "port": 53,
       "domains": ["geosite:netflix","geosite:disney","geosite:bilibili","geosite:tiktok"]
-    },
-    {
-        "address": "https://dns.afosne.icu/afosne",
-        "domains": ["geosite:openai"]
     }
   ],
   "tag": "dns_inbound"
