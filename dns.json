@@ -6,7 +6,7 @@
     {
       "address": "{{IP}}",
       "port": 53,
-      "domains": ["geosite:netflix","geosite:disney"]
+      "domains": ["geosite:netflix","geosite:disney","geosite:bilibili","geosite:tiktok"]
     }
   ],
   "tag": "dns_inbound"
