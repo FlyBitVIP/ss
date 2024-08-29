@@ -23,7 +23,7 @@ URL="https://raw.githubusercontent.com/FlyBitVIP/ss/main/dns.json"
 OUTPUT_FILE="/etc/XrayR/dns.json"
 
 # 提示用户输入选择
-read -p "请选择流媒体解锁地址 (1:香港, 2:日本, 3:新加披, 4:美国, 5:台湾): " choice
+read -p "请选择流媒体解锁地址 (1:香港, 2:日本, 3:新加披, 4:美国, 5:台湾, 6:韩国): " choice
 
 # 根据用户选择设置变量
 if [ "$choice" == "1" ]; then
@@ -36,6 +36,8 @@ elif [ "$choice" == "4" ]; then
     DNS_M="$4"
 elif [ "$choice" == "5" ]; then
     DNS_M="$5"
+elif [ "$choice" == "6" ]; then
+    DNS_M="$6"
 else
     echo "无效选择！"
     exit 1
