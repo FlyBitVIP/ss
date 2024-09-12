@@ -1,19 +1,39 @@
 {
   "servers": [
     {
-        "address": "https://dns.afosne.icu/afosne",
-        "domains": ["geosite:openai"],
+        "address": "https://dns.afosne.icu/{CODE}",
+        "domains": [
+          "geosite:openai", 
+          "geosite:chatgpt",
+          "claude.ai",
+          "copilot.microsoft.com",
+          
+          "geosite:netflix",
+          "geosite:bahamut",
+          "geosite:hulu",
+          "geosite:hbo",
+          "geosite:disney",
+          "geosite:bbc",
+          "geosite:4chan",
+          "geosite:fox",
+          "geosite:abema",
+          "geosite:dmm",
+          "geosite:niconico",
+          "geosite:pixiv",
+          "geosite:bilibili",
+          "geosite:viu",
+          "geosite:tiktok",
+          
+          "wikibooks.org",
+          "wikipedia.org"
+          "zh.wikipedia.org"
+        ],
         "skipFallback": true,
         "queryStrategy": "UseIPv4"
     },
     "1.1.1.1",
     "8.8.8.8",
-    "localhost",
-    {
-      "address": "{{IP}}",
-      "port": 53,
-      "domains": ["geosite:netflix","geosite:disney","geosite:bilibili","geosite:tiktok"]
-    }
+    "localhost"
   ],
   "tag": "dns_inbound"
 }
