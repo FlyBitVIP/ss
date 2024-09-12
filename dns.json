@@ -1,7 +1,7 @@
 {
   "servers": [
     {
-        "address": "{{DNS_URL}}",
+        "address": "{{DNS_TARGET_URL}}",
         "domains": [
           "geosite:openai", 
           "geosite:chatgpt",
