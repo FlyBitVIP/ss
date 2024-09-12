@@ -18,28 +18,27 @@ fi
 # ==============================================================================
 echo "生成/etc/XrayR/dns.json"
 
-# 定义下载的文件 URL 和输出文件
+# 定义下载的文件URL
 URL="https://raw.githubusercontent.com/FlyBitVIP/ss/main/dns.json"
+# 定义输出文件
 OUTPUT_FILE="/etc/XrayR/dns.json"
+# 定义dns数据文件
+PRE_DNS_FILE="/home/pre_dns.txt"
+
+# 输出提示
+echo "序号 - 地区:"
+awk -F '[. ]' '{print $1 ". " $2}' "$PRE_DNS_FILE"
 
 # 提示用户输入选择
-read -p "请选择流媒体解锁地址 (1:香港, 2:日本, 3:新加披, 4:美国, 5:台湾, 6:韩国): " choice
+read -p "请选择流媒体解锁地区的序号: " choice
 
-# 根据用户选择设置变量
-if [ "$choice" == "1" ]; then
-    DNS_M="$1"
-elif [ "$choice" == "2" ]; then
-    DNS_M="$2"
-elif [ "$choice" == "3" ]; then
-    DNS_M="$3"
-elif [ "$choice" == "4" ]; then
-    DNS_M="$4"
-elif [ "$choice" == "5" ]; then
-    DNS_M="$5"
-elif [ "$choice" == "6" ]; then
-    DNS_M="$6"
+CODE=$(grep "^$choice\." "$PRE_DNS_FILE" | awk '{print $2}')
+
+# 判断密码是否存在
+if [ -n "$CODE" ]; then
+    echo "序号 $choice 的密码是: $CODE"
 else
-    echo "无效选择！"
+    echo "找不到对应序号 $CODE 的密码"
     exit 1
 fi
 
@@ -47,7 +46,7 @@ fi
 curl -o /home/tempdns.txt $URL
 
 # 替换文件中的 {{IP}} 占位符
-sed -e "s/{{IP}}/$DNS_M/g" /home/tempdns.txt > $OUTPUT_FILE
+sed -e "s/{{CODE}}/$CODE/g" /home/tempdns.txt > $OUTPUT_FILE
 
 # 显示结果
 echo "文件已生成: $OUTPUT_FILE"
