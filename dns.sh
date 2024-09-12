@@ -32,21 +32,21 @@ awk -F '[. ]' '{print $1 ". " $2}' "$PRE_DNS_FILE"
 # 提示用户输入选择
 read -p "请选择流媒体解锁地区的序号: " choice
 
-CODE=$(grep "^$choice\." "$PRE_DNS_FILE" | awk '{print $2}')
+DNS_URL=$(grep "^$choice\." "$PRE_DNS_FILE" | awk '{print $2}')
 
 # 判断密码是否存在
-if [ -n "$CODE" ]; then
-    echo "序号 $choice 的密码是: $CODE"
+if [ -n "$DNS_URL" ]; then
+    echo "序号 $choice 的密码是: $DNS_URL"
 else
-    echo "找不到对应序号 $CODE 的密码"
+    echo "找不到对应序号 $choice 的密码"
     exit 1
 fi
 
 # 下载文件
 curl -o /home/tempdns.txt $URL
 
-# 替换文件中的 {{IP}} 占位符
-sed -e "s/{{CODE}}/$CODE/g" /home/tempdns.txt > $OUTPUT_FILE
+# 替换文件中的 {{DNS_URL}} 占位符
+sed -e "s/{{DNS_URL}}/$DNS_URL/g" /home/tempdns.txt > $OUTPUT_FILE
 
 # 显示结果
 echo "文件已生成: $OUTPUT_FILE"
