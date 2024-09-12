@@ -4,7 +4,6 @@
         "address": "URL",
         "domains": [
           "geosite:openai", 
-          "geosite:chatgpt",
           "claude.ai",
           "copilot.microsoft.com",
           
