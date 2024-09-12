@@ -45,8 +45,11 @@ fi
 # 下载文件
 curl -o /home/tempdns.txt $TEMP_URL
 
+# 转义字符
+ESCAPED_URL=$(printf '%s\n' "$DNS_URL" | sed 's/[\/&]/\\&/g')
+
 # 替换文件中的 {{URL}} 占位符
-sed -e "s|URL|$DNS_URL|g" /home/tempdns.txt > $OUTPUT_FILE
+sed -e "s/URL/$ESCAPED_URL/g" /home/tempdns.txt > $OUTPUT_FILE
 
 # 显示结果
 echo "文件已生成: $OUTPUT_FILE"
