@@ -25,7 +25,7 @@
           "geosite:tiktok",
           
           "wikibooks.org",
-          "wikipedia.org"
+          "wikipedia.org",
           "zh.wikipedia.org"
         ],
         "skipFallback": true,
