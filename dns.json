@@ -1,7 +1,7 @@
 {
   "servers": [
     {
-        "address": "https://dns.afosne.icu/{CODE}",
+        "address": "{{DNS_URL}}",
         "domains": [
           "geosite:openai", 
           "geosite:chatgpt",
