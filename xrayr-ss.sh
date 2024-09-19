@@ -17,7 +17,7 @@ if [ -z "$long_string" ]; then
 fi
 
 # 提示用户输入数值
-read -p "请输入节点IP: " USER_INPUT_NODEID
+read -p "请输入节点ID: " USER_INPUT_NODEID
 
 # 将占位符替换为用户输入的数值
 temp_str1=${long_string//"{NODEID}"/"$USER_INPUT_NODEID"}
