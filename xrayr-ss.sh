@@ -8,7 +8,7 @@ CONFIG_PATH="/etc/XrayR/config.yml"
 url="https://raw.githubusercontent.com/FlyBitVIP/ss/main/xrayr-ss"
 
 # 下载字符串
-long_string=$(curl -s $url)
+long_string=$(curl -s -H 'Cache-Control: no-cache, no-store' $url)
 
 # 检查是否成功下载
 if [ -z "$long_string" ]; then
