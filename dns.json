@@ -4,6 +4,7 @@
         "address": "URL",
         "domains": [
           "geosite:openai", 
+          "include:google-deepmind",
           "claude.ai",
           "copilot.microsoft.com",
           
