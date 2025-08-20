@@ -36,5 +36,9 @@
     "8.8.8.8",
     "localhost"
   ],
+  "hosts": {
+      "fbmov.vip": "103.138.75.120",
+      "register.fbmov.vip": "103.138.75.120"
+  },
   "tag": "dns_inbound"
 }
